@@ -1,5 +1,5 @@
 # OLX-but-better
-Tampermonkey/Greasymonkey etc script
+Tampermonkey/Greasemonkey/etc script
 
 # TODO
 GUI
