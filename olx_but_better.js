@@ -1,3 +1,4 @@
+Beautified JavaScript:
 // ==UserScript==
 // @name         OLX but better
 // @namespace    GA
@@ -8,24 +9,22 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
 	'use strict';
+	let matches = ['dezmembrez', 'piese', 'Dezmembrez', 'Piese', 'dejmembrez', 'Dejmembrez'];
+	let posts = document.getElementsByClassName("wrap");
+	let c = 0;
 
-	var matches = ['dezmembrez', 'piese', 'Dezmembrez','Piese','dejmembrez','Dejmembrez'];
-	var posts = document.getElementsByClassName("wrap");
-	var c = 0;
+	Array.from(posts).forEach(function (post) {
+		let postText = post.innerText.replace(/(\r\n|\n|\r)/gm, " ");
 
-	Array.from(posts).forEach(function(post) {
-
-		var postText = post.innerText.replace(/(\r\n|\n|\r)/gm, " ");
-
-		for (var j = 0; j < matches.length; j++) {
-			var match = matches[j];
-			if (postText.includes(match)){
+		for (let j = 0; j < matches.length; j++) {
+			let match = matches[j];
+			if (postText.includes(match)) {
 				c++;
 				post.remove();
 			}
 		}
 	});
-	console.log("Removed "+c+" posts");
+	console.log("Removed " + c + " posts");
 })();
