@@ -1,4 +1,3 @@
-Beautified JavaScript:
 // ==UserScript==
 // @name         OLX but better
 // @namespace    GA
